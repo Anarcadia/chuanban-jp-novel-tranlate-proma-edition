@@ -7,7 +7,7 @@
 
 采用 Proma 独有子进程的编排方式，具体来说，这套编排机制让 Proma 的子进程可以固定化地进行分章节翻译，单独完成初翻、二审、润色三个流程。主进程仅仅作为调度者来使用，不会亲自参与翻译，从而确保上下文的稳定。这和 Codex 与 Claude Code 的子进程机制都有所不同，所以才特此做出区分。
 
-如果你在 Codex、Claude Code 或其他 agent 环境使用，请切换对应版本，或者先让 AI 把 skill 里的子进程调用方式改成目标环境的 sub-agent 调用名、参数格式、阻塞等待/恢复机制和返回约束。
+如果你在 Codex、Claude Code 或其他 agent 环境使用，请切换通用版本（https://github.com/Anarcadia/chuanban-jp-novel-translator），或者先让 AI 把 skill 里的子进程调用方式改成目标环境的 sub-agent 调用名、参数格式、阻塞等待/恢复机制和返回约束。
 
 模型选择需要额外强调。建议精翻使用 `claude-opus-4.6` （烧钱很快），日常翻译使用 `DeepSeek-v4-pro`（量大管饱 质量OK）。使用 `DeepSeek-V4-Pro` 时，请走官方 API、官方源的第三方中转 API，或者 OpenRouter 提供的非 SiliconFlow 供应商源；其他来源容易撞审核，导致拒绝翻译。其他模型不保证翻译质量，也不保证长篇流程稳定。
 
